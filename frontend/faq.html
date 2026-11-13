@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - ORBIT</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+            color: #fff;
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .page-header p {
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .back-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(-5px);
+        }
+        .content-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+            min-height: 60vh;
+        }
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .category-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: #fff;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .category-btn:hover, .category-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border-color: transparent;
+        }
+        .faq-group {
+            margin-bottom: 30px;
+        }
+        .faq-group-title {
+            color: #1a1a2e;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-group-title i {
+            color: #667eea;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1a1a2e;
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+        .faq-question i {
+            color: #667eea;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #f8f9fa;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        .faq-answer-content {
+            padding: 20px 25px;
+            color: #555;
+            line-height: 1.8;
+        }
+        .faq-answer-content ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .faq-answer-content li {
+            margin-bottom: 8px;
+        }
+        .search-box {
+            background: #fff;
+            border-radius: 50px;
+            padding: 5px;
+            display: flex;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 50px;
+        }
+        .search-box button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .search-box button:hover {
+            transform: scale(1.05);
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        .no-results i {
+            font-size: 3rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        .still-have-questions {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .still-have-questions h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .still-have-questions p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .still-have-questions .btn {
+            background: #fff;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .still-have-questions .btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="assets/images/logo.png" alt="ORBIT" style="height: 40px;">
+                    <span>ORBIT</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="index.html#partners" class="nav-link">Partners</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <button class="btn btn-outline" onclick="window.location.href='index.html'">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <!-- Back button removed -->
+            <h1><i class="fas fa-question-circle"></i> Frequently Asked Questions</h1>
+            <p>Find answers to common questions about ORBIT and insurance</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="faq-container">
+                <!-- Search Box -->
+                <div class="search-box">
+                    <input type="text" id="faqSearch" placeholder="Search for answers...">
+                    <button onclick="searchFAQ()"><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="faq-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="general">General</button>
+                    <button class="category-btn" data-category="account">Account</button>
+                    <button class="category-btn" data-category="recommendations">Recommendations</button>
+                    <button class="category-btn" data-category="insurance">Insurance</button>
+                    <button class="category-btn" data-category="technical">Technical</button>
+                </div>
+
+                <!-- General FAQs -->
+                <div class="faq-group" data-category="general">
+                    <h2 class="faq-group-title"><i class="fas fa-info-circle"></i> General Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is ORBIT?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <!-- Replaced AI-powered with Smart-powered -->
+                                ORBIT (Online Recommendation for Benefits, Insurance & Terms) is a Smart-powered insurance recommendation platform. We help users find the most suitable insurance plans based on their personal profile, preferences, and needs. Our smart algorithm analyzes various factors to provide personalized recommendations from top Indian insurance providers.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is ORBIT free to use?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes, ORBIT is completely free to use! You can create an account, get recommendations, compare plans, and download policy documents at no cost. We earn a commission from insurance providers when you purchase a policy through our platform, so you never pay anything extra.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How does ORBIT recommend insurance plans?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <!-- Replaced AI with smart -->
+                                Our smart algorithm analyzes multiple factors to provide personalized recommendations:
+                                <ul>
+                                    <li>Your age and life stage</li>
+                                    <li>Annual income and financial goals</li>
+                                    <li>Family composition and dependents</li>
+                                    <li>Existing coverage and insurance needs</li>
+                                    <li>Risk tolerance and budget preferences</li>
+                                    <li>Health status and lifestyle factors</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Which insurance providers does ORBIT work with?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                We partner with 10+ top insurance providers in India, including:
+                                <ul>
+                                    <li>Life Insurance Corporation of India (LIC)</li>
+                                    <li>SBI Life Insurance</li>
+                                    <li>HDFC Life Insurance</li>
+                                    <li>ICICI Prudential Life Insurance</li>
+                                    <li>Bajaj Allianz General Insurance</li>
+                                    <li>Tata AIG General Insurance</li>
+                                    <li>And many more...</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account FAQs -->
+                <div class="faq-group" data-category="account">
+                    <h2 class="faq-group-title"><i class="fas fa-user-circle"></i> Account & Registration</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How do I create an account on ORBIT?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Creating an account is simple:
+                                <ul>
+                                    <li>Click the "Sign Up" button on the homepage</li>
+                                    <li>Fill in your details (name, email, phone, etc.)</li>
+                                    <li>Create a secure password</li>
+                                    <li>Verify your email address</li>
+                                    <li>Start getting recommendations!</li>
+                                </ul>
+                                Alternatively, you can sign up instantly using your Google account.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I sign up using Google?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes! We offer Google Sign-In for quick and easy registration. Simply click "Continue with Google" on the login or signup page, select your Google account, and you'll be logged in instantly. Your basic profile information will be automatically filled from your Google account.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            I forgot my password. How can I reset it?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                To reset your password:
+                                <ul>
+                                    <li>Click "Login" on the homepage</li>
+                                    <li>Click "Forgot Password?" link</li>
+                                    <li>Enter your registered email address</li>
+                                    <li>Check your email for the reset link</li>
+                                    <li>Click the link and create a new password</li>
+                                </ul>
+                                If you don't receive the email, check your spam folder or contact support.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How do I update my profile information?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                After logging in, click on your profile icon in the navigation bar. From there, you can access your profile settings and update your personal information, contact details, and preferences. Keep your profile updated for more accurate insurance recommendations.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How do I delete my account?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                To delete your account, go to Profile Settings and click "Delete Account," or contact our support team. Please note that deleting your account will permanently remove all your data, including saved recommendations and policy documents. This action cannot be undone.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations FAQs -->
+                <div class="faq-group" data-category="recommendations">
+                    <!-- Replaced AI with Analysis -->
+                    <h2 class="faq-group-title"><i class="fas fa-brain"></i> Recommendations & Analysis</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How accurate are ORBIT's recommendations?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <!-- Replaced AI with smart -->
+                                Our smart algorithm is trained on extensive insurance data and continuously improved based on user feedback. While we strive for high accuracy, recommendations should be used as a starting point for your research. We recommend reviewing plan details carefully and consulting with insurance advisors for complex needs.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I compare multiple insurance plans?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Absolutely! ORBIT allows you to compare up to 4 plans side-by-side. You can compare:
+                                <ul>
+                                    <li>Premium amounts and payment options</li>
+                                    <li>Coverage amounts and benefits</li>
+                                    <li>Policy terms and conditions</li>
+                                    <li>Claim settlement ratios</li>
+                                    <li>Additional features and riders</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How is my premium calculated?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Premium calculations consider multiple factors:
+                                <ul>
+                                    <li>Your age at the time of purchase</li>
+                                    <li>Coverage amount requested</li>
+                                    <li>Policy term duration</li>
+                                    <li>Type of insurance plan</li>
+                                    <li>Health status and lifestyle habits</li>
+                                    <li>Any additional riders or benefits</li>
+                                </ul>
+                                Note: Final premiums are determined by the insurance provider and may vary slightly from our estimates.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insurance FAQs -->
+                <div class="faq-group" data-category="insurance">
+                    <h2 class="faq-group-title"><i class="fas fa-shield-alt"></i> Insurance Policies</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What types of insurance does ORBIT recommend?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                We provide recommendations for various insurance types:
+                                <ul>
+                                    <li><strong>Life Insurance:</strong> Term plans, endowment, ULIPs, whole life</li>
+                                    <li><strong>Health Insurance:</strong> Individual, family floater, critical illness</li>
+                                    <li><strong>Motor Insurance:</strong> Car and two-wheeler insurance</li>
+                                    <li><strong>Travel Insurance:</strong> Domestic and international coverage</li>
+                                    <li><strong>Home Insurance:</strong> Property and contents protection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I purchase insurance directly through ORBIT?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                When you select a plan, we redirect you to the insurance provider's official website or connect you with their representative for the final purchase. This ensures you receive the most up-to-date policy terms and complete the KYC process directly with the insurer.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How do I download my policy documents?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                After selecting a plan, you can download a detailed policy summary as a PDF from your dashboard. For the actual policy document after purchase, you'll receive it directly from the insurance provider via email or through their customer portal.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is a claim settlement ratio?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Claim Settlement Ratio (CSR) is the percentage of claims an insurance company settles against the total claims received in a financial year. A higher CSR indicates that the insurer is more likely to approve and pay claims. ORBIT displays CSR for each provider to help you make informed decisions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical FAQs -->
+                <div class="faq-group" data-category="technical">
+                    <h2 class="faq-group-title"><i class="fas fa-cog"></i> Technical & Security</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is my personal information secure on ORBIT?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Yes, we take security very seriously. Your data is protected by:
+                                <ul>
+                                    <li>256-bit SSL encryption for all data transmission</li>
+                                    <li>Secure, encrypted database storage</li>
+                                    <li>Regular security audits and penetration testing</li>
+                                    <li>Strict access controls and authentication</li>
+                                    <li>Compliance with data protection regulations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Which browsers does ORBIT support?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                ORBIT works on all modern browsers:
+                                <ul>
+                                    <li>Google Chrome (recommended)</li>
+                                    <li>Mozilla Firefox</li>
+                                    <li>Microsoft Edge</li>
+                                    <li>Safari</li>
+                                    <li>Opera</li>
+                                </ul>
+                                For the best experience, we recommend using the latest version of your browser.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is there a mobile app for ORBIT?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Currently, ORBIT is available as a responsive web application that works seamlessly on mobile devices. Simply visit our website from your mobile browser to access all features. A dedicated mobile app is in development and will be available soon on both Android and iOS platforms.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            I'm experiencing technical issues. What should I do?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                If you're facing technical issues:
+                                <ul>
+                                    <li>Try refreshing the page or clearing your browser cache</li>
+                                    <li>Disable browser extensions that might interfere</li>
+                                    <li>Try using a different browser</li>
+                                    <li>Check your internet connection</li>
+                                    <li>If the issue persists, contact our support team with details about the problem</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Still Have Questions -->
+                <div class="still-have-questions">
+                    <h3>Still Have Questions?</h3>
+                    <p>Can't find what you're looking for? Our support team is here to help!</p>
+                    <a href="support.html" class="btn">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-shield-alt"></i> ORBIT</h3>
+                    <!-- Replaced AI-powered with Smart-powered -->
+                    <p>Smart-powered insurance recommendation platform helping you find the best coverage for your needs.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#partners">Partners</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> support@orbitinsurance.com</li>
+                        <li><i class="fas fa-phone"></i> +91-1800-XXX-XXXX</li>
+                        <li><i class="fas fa-map-marker-alt"></i> India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ORBIT Insurance Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Category filter functionality
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                
+                document.querySelectorAll('.faq-group').forEach(group => {
+                    if (category === 'all' || group.dataset.category === category) {
+                        group.style.display = 'block';
+                    } else {
+                        group.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        function searchFAQ() {
+            const searchTerm = document.getElementById('faqSearch').value.toLowerCase();
+            
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    if (searchTerm) {
+                        item.classList.add('active');
+                    }
+                } else {
+                    item.style.display = searchTerm ? 'none' : 'block';
+                }
+            });
+            
+            // Show all groups when searching
+            if (searchTerm) {
+                document.querySelectorAll('.faq-group').forEach(group => {
+                    group.style.display = 'block';
+                });
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                document.querySelector('.category-btn[data-category="all"]').classList.add('active');
+            }
+        }
+
+        // Search on Enter key
+        document.getElementById('faqSearch').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchFAQ();
+            }
+        });
+
+        // Real-time search
+        document.getElementById('faqSearch').addEventListener('input', searchFAQ);
+    </script>
+</body>
+</html>
