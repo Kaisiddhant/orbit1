@@ -1,0 +1,96 @@
+2026-02-16T15:54:12: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T15:54:12:  * Running on all addresses (0.0.0.0)
+2026-02-16T15:54:12:  * Running on http://127.0.0.1:5000
+2026-02-16T15:54:12:  * Running on http://192.168.31.91:5000
+2026-02-16T15:54:12: Press CTRL+C to quit
+2026-02-16T15:54:12:  * Restarting with watchdog (windowsapi)
+2026-02-16T15:56:00: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T15:56:00:  * Running on all addresses (0.0.0.0)
+2026-02-16T15:56:00:  * Running on http://127.0.0.1:5000
+2026-02-16T15:56:00:  * Running on http://192.168.31.91:5000
+2026-02-16T15:56:00: Press CTRL+C to quit
+2026-02-16T15:56:00:  * Restarting with watchdog (windowsapi)
+2026-02-16T15:56:20: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T15:56:20:  * Running on all addresses (0.0.0.0)
+2026-02-16T15:56:20:  * Running on http://127.0.0.1:5000
+2026-02-16T15:56:20:  * Running on http://192.168.31.91:5000
+2026-02-16T15:56:20: Press CTRL+C to quit
+2026-02-16T15:56:20:  * Restarting with watchdog (windowsapi)
+2026-02-16T16:12:28: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T16:12:28:  * Running on all addresses (0.0.0.0)
+2026-02-16T16:12:28:  * Running on http://127.0.0.1:5000
+2026-02-16T16:12:28:  * Running on http://192.168.31.91:5000
+2026-02-16T16:12:28: Press CTRL+C to quit
+2026-02-16T16:12:28:  * Restarting with watchdog (windowsapi)
+2026-02-16T16:14:34: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T16:14:34:  * Running on all addresses (0.0.0.0)
+2026-02-16T16:14:34:  * Running on http://127.0.0.1:5000
+2026-02-16T16:14:34:  * Running on http://192.168.31.91:5000
+2026-02-16T16:14:34: Press CTRL+C to quit
+2026-02-16T16:14:34:  * Restarting with watchdog (windowsapi)
+2026-02-16T16:15:20: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T16:15:20:  * Running on all addresses (0.0.0.0)
+2026-02-16T16:15:20:  * Running on http://127.0.0.1:5000
+2026-02-16T16:15:20:  * Running on http://192.168.31.91:5000
+2026-02-16T16:15:20: Press CTRL+C to quit
+2026-02-16T16:15:20:  * Restarting with watchdog (windowsapi)
+2026-02-16T16:16:01: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T16:16:01:  * Running on all addresses (0.0.0.0)
+2026-02-16T16:16:01:  * Running on http://127.0.0.1:5000
+2026-02-16T16:16:01:  * Running on http://192.168.31.91:5000
+2026-02-16T16:16:01: Press CTRL+C to quit
+2026-02-16T16:16:01:  * Restarting with watchdog (windowsapi)
+2026-02-16T16:16:10:  * Debugger is active!
+2026-02-16T16:16:10:  * Debugger PIN: 125-167-876
+2026-02-16T16:16:21: 127.0.0.1 - - [16/Feb/2026 16:16:21] "OPTIONS /api/stats HTTP/1.1" 200 -
+2026-02-16T16:16:21: 127.0.0.1 - - [16/Feb/2026 16:16:21] "GET /api/profile?user_id=1 HTTP/1.1" 200 -
+2026-02-16T16:16:21: 127.0.0.1 - - [16/Feb/2026 16:16:21] "GET /api/stats HTTP/1.1" 200 -
+2026-02-16T16:16:21: 127.0.0.1 - - [16/Feb/2026 16:16:21] "OPTIONS /api/policies HTTP/1.1" 200 -
+2026-02-16T16:16:22: 127.0.0.1 - - [16/Feb/2026 16:16:22] "GET /api/policies HTTP/1.1" 200 -
+2026-02-16T20:48:11: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T20:48:11:  * Running on all addresses (0.0.0.0)
+2026-02-16T20:48:11:  * Running on http://127.0.0.1:5000
+2026-02-16T20:48:11:  * Running on http://127.0.0.1:5000
+2026-02-16T20:48:11: Press CTRL+C to quit
+2026-02-16T20:48:12:  * Restarting with watchdog (windowsapi)
+2026-02-16T20:48:43: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T20:48:43:  * Running on all addresses (0.0.0.0)
+2026-02-16T20:48:43:  * Running on http://127.0.0.1:5000
+2026-02-16T20:48:43:  * Running on http://192.168.31.91:5000
+2026-02-16T20:48:43: 
+2026-02-16T20:48:43:  * Restarting with watchdog (windowsapi)
+2026-02-16T20:49:55: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T20:49:55:  * Running on all addresses (0.0.0.0)
+2026-02-16T20:49:55:  * Running on http://127.0.0.1:5000
+2026-02-16T20:49:55:  * Running on http://192.168.31.91:5000
+2026-02-16T20:49:55: Press CTRL+C to quit
+2026-02-16T20:49:55:  * Restarting with watchdog (windowsapi)
+2026-02-16T20:50:03:  * Debugger is active!
+2026-02-16T20:50:04:  * Debugger PIN: 125-167-876
+2026-02-16T20:50:31: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T20:50:31:  * Running on all addresses (0.0.0.0)
+2026-02-16T20:50:31:  * Running on http://127.0.0.1:5000
+2026-02-16T20:50:31:  * Running on http://192.168.31.91:5000
+2026-02-16T20:50:31: Press CTRL+C to quit
+2026-02-16T20:50:31:  * Restarting with watchdog (windowsapi)
+2026-02-16T20:54:33: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T20:54:33:  * Running on all addresses (0.0.0.0)
+2026-02-16T20:54:33:  * Running on http://127.0.0.1:5000
+2026-02-16T20:54:33:  * Running on http://192.168.31.91:5000
+2026-02-16T20:54:33: Press CTRL+C to quit
+2026-02-16T20:54:33:  * Restarting with watchdog (windowsapi)
+2026-02-16T20:54:48:  * Debugger is active!
+2026-02-16T20:54:48:  * Debugger PIN: 788-636-253
+2026-02-16T20:54:48: 127.0.0.1 - - [16/Feb/2026 20:54:48] "OPTIONS /api/stats HTTP/1.1" 200 -
+2026-02-16T20:54:49: 127.0.0.1 - - [16/Feb/2026 20:54:49] "GET /api/profile?user_id=1 HTTP/1.1" 200 -
+2026-02-16T20:54:49: 127.0.0.1 - - [16/Feb/2026 20:54:49] "GET /api/stats HTTP/1.1" 200 -
+2026-02-16T20:54:49: 127.0.0.1 - - [16/Feb/2026 20:54:49] "OPTIONS /api/policies HTTP/1.1" 200 -
+2026-02-16T20:54:49: 127.0.0.1 - - [16/Feb/2026 20:54:49] "GET /api/policies HTTP/1.1" 200 -
+2026-02-16T20:57:32: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2026-02-16T20:57:32:  * Running on all addresses (0.0.0.0)
+2026-02-16T20:57:32:  * Running on http://127.0.0.1:5000
+2026-02-16T20:57:32:  * Running on http://192.168.31.91:5000
+2026-02-16T20:57:32: Press CTRL+C to quit
+2026-02-16T20:57:32:  * Restarting with watchdog (windowsapi)
+2026-02-16T20:57:40:  * Debugger is active!
+2026-02-16T20:57:40:  * Debugger PIN: 788-636-253

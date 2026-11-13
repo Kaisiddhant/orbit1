@@ -1,0 +1,48 @@
+2026-02-16T15:54:12:  * Serving Flask app 'app'
+2026-02-16T15:54:12:  * Debug mode: on
+2026-02-16T15:56:00:  * Serving Flask app 'app'
+2026-02-16T15:56:00:  * Debug mode: on
+2026-02-16T15:56:20:  * Serving Flask app 'app'
+2026-02-16T15:56:20:  * Debug mode: on
+2026-02-16T16:12:27:  * Serving Flask app 'app'
+2026-02-16T16:12:27:  * Debug mode: on
+2026-02-16T16:14:34:  * Serving Flask app 'app'
+2026-02-16T16:14:34:  * Debug mode: on
+2026-02-16T16:15:20:  * Serving Flask app 'app'
+2026-02-16T16:15:20:  * Debug mode: on
+2026-02-16T16:16:01:  * Serving Flask app 'app'
+2026-02-16T16:16:01:  * Debug mode: on
+2026-02-16T16:16:21: DEBUG - Profile data for user_id 1:
+2026-02-16T16:16:21:   full_name: sid (type: str)
+2026-02-16T16:16:21:   email: abc@gmail.com (type: str)
+2026-02-16T16:16:21:   phone: 9876543210 (type: str)
+2026-02-16T16:16:21:   date_of_birth: 2006-08-08 (type: str)
+2026-02-16T16:16:21:   gender: Male (type: str)
+2026-02-16T16:16:21: 
+2026-02-16T16:16:21:   annual_income: 300000.0 (type: float)
+2026-02-16T16:16:21:   city: mumbai (type: str)
+2026-02-16T16:16:21:   state: maharashtra (type: str)
+2026-02-16T16:16:21:   pincode: 400068 (type: str)
+2026-02-16T20:48:11:  * Serving Flask app 'app'
+2026-02-16T20:48:11:  * Debug mode: on
+2026-02-16T20:48:43:  * Serving Flask app 'app'
+2026-02-16T20:48:43:  * Debug mode: on
+2026-02-16T20:49:55:  * Serving Flask app 'app'
+2026-02-16T20:49:55:  * Debug mode: on
+2026-02-16T20:50:31:  * Serving Flask app 'app'
+2026-02-16T20:50:31:  * Debug mode: on
+2026-02-16T20:54:33:  * Serving Flask app 'app'
+2026-02-16T20:54:33:  * Debug mode: on
+2026-02-16T20:54:49: DEBUG - Profile data for user_id 1:
+2026-02-16T20:54:49:   full_name: sid (type: str)
+2026-02-16T20:54:49:   email: abc@gmail.com (type: str)
+2026-02-16T20:54:49:   phone: 9876543210 (type: str)
+2026-02-16T20:54:49:   date_of_birth: 2006-08-08 (type: str)
+2026-02-16T20:54:49: 
+2026-02-16T20:54:49:   occupation: employed (type: str)
+2026-02-16T20:54:49:   annual_income: 300000.0 (type: float)
+2026-02-16T20:54:49:   city: mumbai (type: str)
+2026-02-16T20:54:49:   state: maharashtra (type: str)
+2026-02-16T20:54:49:   pincode: 400068 (type: str)
+2026-02-16T20:57:32:  * Serving Flask app 'app'
+2026-02-16T20:57:32:  * Debug mode: on
